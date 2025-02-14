@@ -14,13 +14,18 @@ const StepOne = () => {
         <h1
           className={`${roadRage.className} text-white text-center text-[34px] leading-[100%]`}
         >
-          Techember Fest "25
+          Techember Fest &quot;25
         </h1>
-        <p className={`text-[#FAFAFA] text-center ${roboto.className} text-[16px] max-w-[340px] p-2 mx-auto font-normal leading-[150%]`}>
+
+        <p
+          className={`text-[#FAFAFA] text-center ${roboto.className} text-[16px] max-w-[340px] p-2 mx-auto font-normal leading-[150%]`}
+        >
           Join us for an unforgettable experience at [Event Name]! Secure your
           spot now.
         </p>
-        <div className={`flex gap-4 justify-center items-center text-white text-[16px] leading-[150%] ${roboto.className} font-normal`}>
+        <div
+          className={`flex gap-4 justify-center items-center text-white text-[16px] leading-[150%] ${roboto.className} font-normal`}
+        >
           <span>📍 Event Location</span>
           <span className="mx-4">| |</span>
           <span>March 15, 2025 | 7:00 PM</span>

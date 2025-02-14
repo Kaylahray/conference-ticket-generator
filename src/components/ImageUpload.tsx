@@ -2,7 +2,7 @@
 import { useCallback, useState } from "react";
 import { useDropzone } from "react-dropzone";
 import Image from "next/image";
-import { Camera, Trash2, Upload } from "lucide-react";
+import {  Trash2, Upload } from "lucide-react";
 import { roboto } from "@/app/layout";
 
 interface ImageUploadProps {

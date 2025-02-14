@@ -4,6 +4,12 @@ import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { schema } from "@/lib/schema";
 
+import {
+  UseFormRegister,
+  UseFormHandleSubmit,
+  FieldErrors,
+} from "react-hook-form";
+
 export interface FormData {
   fullName: string;
   email: string;
@@ -22,12 +28,12 @@ export interface TicketOption {
 }
 
 interface TicketFormContextType {
-  register: any;
-  handleSubmit: any;
-  errors: any;
+  register: UseFormRegister<FormData>;
+  handleSubmit: UseFormHandleSubmit<FormData>;
+  errors: FieldErrors<FormData>;
   isSubmitting: boolean;
   isValid: boolean;
-  setValue: any;
+  setValue: (name: keyof FormData, value: any) => void;
   reset: () => void;
   imagePreview: string;
   setImagePreview: (url: string) => void;
@@ -40,7 +46,7 @@ interface TicketFormContextType {
   ticketOptions: TicketOption[];
   quantity: number;
   setQuantity: (quantity: number) => void;
-  submitForm: (data: FormData) => void;
+  submitForm: (data: FormData) => Promise<FormData>;
   prev: () => void;
   next: () => void;
   back: () => void;
