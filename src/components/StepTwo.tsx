@@ -21,8 +21,11 @@ const StepTwo = () => {
       <form
         onSubmit={handleSubmit(submitForm)}
         className="w-full flex flex-col gap-8"
+        noValidate
+        aria-label="Ticket booking details"
       >
-        <div>
+        <div role="group" aria-labelledby="image-upload-label">
+          <span id="image-upload-label" className="sr-only">Profile Image Upload</span>
           <ImageUpload
             value={imagePreview}
             onChange={(url) => setValue("avatarUrl", url)}
@@ -31,41 +34,72 @@ const StepTwo = () => {
           />
         </div>
 
-        <div className="bg-[#07373F] w-full h-1"></div>
+        <div className="bg-[#07373F] w-full h-1" role="separator" />
 
         <div>
-          <label>Enter your name</label>
-          <input {...register("fullName")} />
+          <label htmlFor="fullName" className="block mb-2">Enter your name</label>
+          <input
+            id="fullName"
+            {...register("fullName")}
+            aria-invalid={errors.fullName ? "true" : "false"}
+            aria-describedby={errors.fullName ? "fullName-error" : undefined}
+            className="w-full border p-2 rounded-md"
+          />
           {errors.fullName && (
-            <p className="text-red-500 text-sm">{errors.fullName.message}</p>
+            <p id="fullName-error" className="text-red-500 text-sm" role="alert">
+              {errors.fullName.message}
+            </p>
           )}
         </div>
 
         <div>
-          <label>Enter you email *</label>
-          <input type="email" {...register("email")} />
+          <label htmlFor="email" className="block mb-2">Enter your email *</label>
+          <input
+            id="email"
+            type="email"
+            {...register("email")}
+            aria-invalid={errors.email ? "true" : "false"}
+            aria-describedby={errors.email ? "email-error" : undefined}
+            aria-required="true"
+            className="w-full border p-2 rounded-md"
+          />
           {errors.email && (
-            <p className="text-red-500 text-sm">{errors.email.message}</p>
+            <p id="email-error" className="text-red-500 text-sm" role="alert">
+              {errors.email.message}
+            </p>
           )}
         </div>
 
         <div>
-          <label className="lg:hidden"> About Project</label>
-          <label className="hidden lg:block">Special request?</label>
-
+          <label htmlFor="request" className="lg:hidden block mb-2">About Project</label>
+          <label htmlFor="request" className="hidden lg:block mb-2">Special request?</label>
           <textarea
+            id="request"
             {...register("request")}
             className="w-full border p-2 rounded-md resize-none overflow-hidden text-[#aaa]"
-            placeholder="Textarea"
+            placeholder="Enter any special requests or requirements"
             rows={3}
-          ></textarea>
+            aria-describedby="request-hint"
+          />
+          <span id="request-hint" className="sr-only">Optional: Enter any special requests or requirements for your ticket</span>
         </div>
 
         <div className="md:flex-row flex flex-col gap-4">
-          <Button type="submit" isLoading={isSubmitting} fullWidth>
-            Get My Free Ticket
+          <Button 
+            type="submit" 
+            isLoading={isSubmitting} 
+            fullWidth
+            disabled={isSubmitting}
+            aria-busy={isSubmitting}
+          >
+            {isSubmitting ? 'Processing...' : 'Get My Free Ticket'}
           </Button>
-          <Button type="button" variant="secondary" onClick={back} fullWidth>
+          <Button 
+            type="button" 
+            variant="secondary" 
+            onClick={back} 
+            fullWidth
+          >
             Back
           </Button>
         </div>
@@ -73,5 +107,4 @@ const StepTwo = () => {
     </div>
   );
 };
-
-export default StepTwo;
+export default StepTwo

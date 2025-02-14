@@ -136,9 +136,13 @@ export function TicketFormProvider({
       const data = JSON.parse(savedTicketData) as FormData;
       setTicketData(data);
       setQuantity(data.quantity || 1);
+
       Object.entries(data).forEach(([key, value]) => {
         setValue(key as keyof FormData, value);
       });
+      if (data.avatarUrl) {
+        setImagePreview(data.avatarUrl);
+      }
     }
   }, [setValue]);
 
@@ -175,6 +179,12 @@ export function TicketFormProvider({
   const handleImageUpload = (url: string) => {
     setValue("avatarUrl", url);
     setImagePreview(url);
+
+    const storedData = localStorage.getItem("ticketData");
+    const existingData = storedData ? JSON.parse(storedData) : {};
+
+    const updatedData = { ...existingData, avatarUrl: url };
+    localStorage.setItem("ticketData", JSON.stringify(updatedData));
   };
 
   const handleTicketSelect = (
