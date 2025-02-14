@@ -2,7 +2,7 @@
 import { useCallback, useState } from "react";
 import { useDropzone } from "react-dropzone";
 import Image from "next/image";
-import {  Trash2, Upload } from "lucide-react";
+import { Trash2, Upload } from "lucide-react";
 import { roboto } from "@/app/font";
 
 interface ImageUploadProps {
@@ -76,13 +76,13 @@ const ImageUpload = ({
 
   return (
     <div className="space-y-4 w-full">
-      <div className="flex flex-col p-6 pb-12 gap-8 items-start w-full border border-[#07373F] bg-[#052228] rounded-3xl">
+      <div className="flex flex-col p-6 lg:pb-12 gap-3 lg:gap-8 items-start w-full border border-[#07373F] bg-[#052228] rounded-3xl">
         <label>Upload Avatar</label>
-        <div className="flex h-[200px] justify-center items-center gap-[10px] self w-full bg-black/20">
+        <div className="flex lg:h-[200px] justify-center items-center gap-[10px] w-full lg:bg-black/20">
           <div
             {...getRootProps()}
             className={`
-              flex w-[240px] h-[240px] p-6 flex-col justify-center items-center gap-4 rounded-[32px] border-4 border-[#24A0B5]/50 bg-[#0E464F]
+              flex lg:w-[240px] h-[240px] w-full  p-6 flex-col justify-center items-center gap-4 rounded-[32px] border-4 border-[#24A0B5]/50 bg-[#0E464F]
               ${isDragActive ? " border-[#24A0B5]/50" : "bg-[#0E464F]"}
               ${
                 isLoading
@@ -106,7 +106,9 @@ const ImageUpload = ({
                         width={32}
                         height={32}
                       />
-                      <p className={`text-[16px] text-[#FAFAFA] text-center ${roboto.className} font-normal leading-[150%]`}>
+                      <p
+                        className={`text-[16px] text-[#FAFAFA] text-center ${roboto.className} font-normal leading-[150%]`}
+                      >
                         Drag & drop or click to upload
                       </p>
                     </div>

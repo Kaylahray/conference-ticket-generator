@@ -6,7 +6,7 @@ import { usePathname } from "next/navigation";
 const NavLinks = () => {
   const pathname = usePathname();
 
-  // Define your links with their respective paths
+ 
   const links = [
     { href: "/", label: "Events" },
     { href: "/tickets", label: "My Tickets" },

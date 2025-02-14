@@ -27,13 +27,13 @@ const TicketSelector: React.FC<TicketSelectorProps> = ({ options }) => {
   return (
     <div className="flex flex-col justify-center items-center gap-4 p-4 w-full rounded-[24px] border border-[#07373F] bg-[#052228]">
       {/* Ticket Options */}
-      <div className="flex gap-4 w-full">
+      <div className="md:flex-row flex flex-col gap-4 w-full">
         {options.map((option) => (
           <button
             type="button"
             key={option.type}
             onClick={() => handleTicketSelect(option)}
-            className={`flex flex-col p-3 rounded-[12px] gap-3 w-1/3 items-start text-left ${
+            className={`flex flex-col p-3 rounded-[12px] gap-3 md:w-1/3 w-full items-start text-left ${
               selectedTicketType === option.type
                 ? "border border-[#197686] bg-[#12464E]"
                 : "border-2 border-[#197686]"

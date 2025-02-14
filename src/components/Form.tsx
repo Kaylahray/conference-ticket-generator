@@ -28,7 +28,7 @@ const Form = () => {
       {/* name and progressBar */}
       <div className="flex flex-col items justify-between ">
         <div className="flex justify-between flex-col md:flex-row mb-4">
-          <span className="text-white text-[24px]  font-normal leading-normal">
+          <span className="text-white text-[24px] lg:text-[32px] font-normal leading-normal">
             {steps[currentStep - 1]?.name}
           </span>
 

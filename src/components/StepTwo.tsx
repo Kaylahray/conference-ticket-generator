@@ -17,7 +17,7 @@ const StepTwo = () => {
   } = useTicketFormContext();
 
   return (
-    <div className="p-6 rounded-3xl border border-[#0E464F] bg-[#08252B]">
+    <div className="lg:p-6 p-0 border-transparent rounded-3xl border lg:border-[#0E464F] lg:bg-[#08252B]">
       <form
         onSubmit={handleSubmit(submitForm)}
         className="w-full flex flex-col gap-8"
@@ -50,7 +50,9 @@ const StepTwo = () => {
         </div>
 
         <div>
-          <label>Special request ?</label>
+          <label className="lg:hidden"> About Project</label>
+          <label className="hidden lg:block">Special request?</label>
+
           <textarea
             {...register("request")}
             className="w-full border p-2 rounded-md resize-none overflow-hidden text-[#aaa]"
@@ -59,7 +61,7 @@ const StepTwo = () => {
           ></textarea>
         </div>
 
-        <div className="flex gap-4">
+        <div className="md:flex-row flex flex-col gap-4">
           <Button type="submit" isLoading={isSubmitting} fullWidth>
             Get My Free Ticket
           </Button>

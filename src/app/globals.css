@@ -13,6 +13,11 @@
     --foreground: #ededed;
   }
 }
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 
 .font-rage {
   font-family: var(--font-road-rage), cursive;

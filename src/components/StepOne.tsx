@@ -9,10 +9,10 @@ const StepOne = () => {
     useTicketFormContext();
 
   return (
-    <div className="flex flex-col justify-center items-start gap-8 p-6 self-stretch rounded-[32px] border border-[#0E464F] bg-[#08252B]">
-      <div className="flex flex-col gap-2 p-6 w-full text-center h-fit rounded-[24px] border-l-2 border-r-2 border-b-2 border-[#07373F] bg-gradient-to-b from-[#24A0B5]/20 to-[#24A0B5]/0 backdrop-blur-[7px]">
+    <div className="flex flex-col justify-center items-start gap-8  lg:p-6 p-0 border-transparent rounded-[32px] border lg:border-[#0E464F] lg:bg-[#08252B]">
+      <div className="flex flex-col gap-4 lg:gap-2 lg:p-6 pt-4 px-6 pb-6 w-full text-center h-fit rounded-[24px] border-l-2 border-r-2 border-b-2 border-[#07373F] bg-gradient-to-b from-[#24A0B5]/20 to-[#24A0B5]/0 backdrop-blur-[7px]">
         <h1
-          className={`${roadRage.className} text-white text-center text-[34px] leading-[100%]`}
+          className={`${roadRage.className} text-white  lg:text-[62px] text-[48px] leading-[100%]`}
         >
           Techember Fest &quot;25
         </h1>
@@ -24,10 +24,10 @@ const StepOne = () => {
           spot now.
         </p>
         <div
-          className={`flex gap-4 justify-center items-center text-white text-[16px] leading-[150%] ${roboto.className} font-normal`}
+          className={`md:flex-row flex flex-col md:gap-4 justify-center items-center text-white text-[16px] leading-[150%] ${roboto.className} font-normal`}
         >
           <span>📍 Event Location</span>
-          <span className="mx-4">| |</span>
+          <span className="mx-4 hidden md:inline-block">| |</span>
           <span>March 15, 2025 | 7:00 PM</span>
         </div>
       </div>
@@ -51,7 +51,7 @@ const StepOne = () => {
             ))}
           </select>
         </div>
-        <div className="flex gap-4">
+        <div className="md:flex-row flex flex-col gap-4">
           <Button
             type="button"
             variant="secondary"
