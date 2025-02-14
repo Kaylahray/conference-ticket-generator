@@ -1,6 +1,6 @@
 "use client";
 import { createContext, useContext, useEffect, useState } from "react";
-import { useForm } from "react-hook-form";
+import { useForm, UseFormSetValue } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { schema } from "@/lib/schema";
 
@@ -33,7 +33,7 @@ interface TicketFormContextType {
   errors: FieldErrors<FormData>;
   isSubmitting: boolean;
   isValid: boolean;
-  setValue: (name: keyof FormData, value: any) => void;
+  setValue: UseFormSetValue<FormData>;
   reset: () => void;
   imagePreview: string;
   setImagePreview: (url: string) => void;
