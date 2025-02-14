@@ -3,7 +3,7 @@ import { useCallback, useState } from "react";
 import { useDropzone } from "react-dropzone";
 import Image from "next/image";
 import {  Trash2, Upload } from "lucide-react";
-import { roboto } from "@/app/layout";
+import { roboto } from "@/app/font";
 
 interface ImageUploadProps {
   onChange: (url: string) => void;

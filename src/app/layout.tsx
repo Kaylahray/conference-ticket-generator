@@ -3,24 +3,11 @@ import Image from "next/image";
 import NavLinks from "@/components/Navbar";
 import { TicketFormProvider } from "@/context/TicketFormContext";
 import localFont from "next/font/local";
-import { Roboto } from "next/font/google";
-import { Road_Rage } from "next/font/google";
-
-export const roboto = Roboto({
-  subsets: ["latin"],
-  weight: ["400", "700"],
-  variable: "--font-roboto",
-});
 
 const jejuMyeongjo = localFont({
   src: "../fonts/JejuMyeongjo-Regular.ttf",
   display: "swap",
   variable: "--font-jeju",
-});
-
-export const roadRage = Road_Rage({
-  subsets: ["latin"],
-  weight: "400",
 });
 
 export default function RootLayout({

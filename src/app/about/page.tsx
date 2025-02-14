@@ -1,11 +1,13 @@
 import Container from "@/components/Container";
 import React from "react";
-import { roboto } from "../layout";
+import { roboto } from "@/app/font";
 
 const Page = () => {
   return (
     <Container>
-      <div className={`text-white ${roboto.className} text-base font-normal leading-6 space-y-4`}>
+      <div
+        className={`text-white ${roboto.className} text-base font-normal leading-6 space-y-4`}
+      >
         <h1 className="text-xl font-bold">
           Event Ticket Booking UI – Open Source Practice Project 🎟️
         </h1>

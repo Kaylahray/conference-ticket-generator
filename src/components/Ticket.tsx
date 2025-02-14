@@ -1,7 +1,7 @@
 // components/Ticket.tsx
 import React from "react";
 import Image from "next/image";
-import { roadRage, roboto } from "@/app/layout"; // Import roboto
+import { roadRage, roboto } from "@/app/font"; // Import roboto
 
 interface TicketProps {
   fullName: string;

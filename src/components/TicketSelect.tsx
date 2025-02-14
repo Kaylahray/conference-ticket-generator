@@ -1,6 +1,6 @@
 import { useTicketFormContext } from "@/context/TicketFormContext";
 import React, { useEffect } from "react";
-import { roboto } from "@/app/layout"; // Import roboto
+import { roboto } from "@/app/font"; // Import roboto
 
 interface TicketSelectorProps {
   options: TicketOption[];

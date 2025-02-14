@@ -2,7 +2,7 @@ import React from "react";
 import { Button } from "./ui/Button";
 import TicketSelector from "./TicketSelect";
 import { useTicketFormContext } from "@/context/TicketFormContext";
-import { roadRage, roboto } from "@/app/layout";
+import { roadRage, roboto } from "@/app/font";
 
 const StepOne = () => {
   const { handleCancel, next, ticketOptions, handleQuantityChange, quantity } =
