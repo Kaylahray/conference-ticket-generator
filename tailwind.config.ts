@@ -8,7 +8,9 @@ export default {
   ],
   theme: {
     extend: {
-     
+      fontFamily: {
+        roboto: ["var(--font-roboto)", "sans-serif"], // Uses the CSS variable from next/font
+      },
     },
   },
   plugins: [],

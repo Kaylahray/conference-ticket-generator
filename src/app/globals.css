@@ -14,8 +14,45 @@
   }
 }
 
-body {
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
+.font-rage {
+  font-family: var(--font-road-rage), cursive;
+}
+
+.font-roboto {
+  font-family: var(--font-roboto), sans-serif; /* ✅ Correct */
+}
+input,
+textarea,
+select {
+  display: flex;
+  padding: 12px;
+  align-items: center;
+  gap: 8px;
+  border-radius: 12px;
+  border: 1px solid #07373f;
+  width: 100%;
+  background-color: transparent;
+}
+input::placeholder,
+select,
+input,
+textarea {
+  color: #fff; /* White color */
+  font-family: Roboto, sans-serif;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 150%;
+}
+
+label {
+  color: #fafafa;
+
+  /* Text/Regular/Normal */
+  font-family: Roboto;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  margin-bottom: 8px;
+  line-height: 150%; /* 24px */
 }
