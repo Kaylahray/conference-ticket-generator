@@ -25,8 +25,8 @@ const Ticket: React.FC<TicketProps> = ({
       <Image
         src="/ticket.svg"
         alt="ticket"
-        width={100}
-        height={100}
+        width={300}
+        height={600}
         className="h-full w-full"
       />
       <Image
@@ -43,10 +43,14 @@ const Ticket: React.FC<TicketProps> = ({
           >
             Techember Fest ”25
           </h1>
-          <p className={`text-white text-[10px] leading-[150%] ${roboto.className} font-normal`}>
+          <p
+            className={`text-white text-[10px] leading-[150%] ${roboto.className} font-normal`}
+          >
             📍 04 Rumens road, Ikoyi, Lagos
           </p>
-          <p className={`text-white text-[10px] leading-[150%] ${roboto.className} font-normal`}>
+          <p
+            className={`text-white text-[10px] leading-[150%] ${roboto.className} font-normal`}
+          >
             {" "}
             📅 March 15, 2025 | 7:00 PM
           </p>
@@ -63,18 +67,26 @@ const Ticket: React.FC<TicketProps> = ({
         <div className="rounded-md border border-[#133D44] bg-[#08343C] flex flex-col p-1">
           <div className="grid grid-cols-2 border-b border-[#24A0B5]">
             <div className="p-2">
-              <p className={`text-white ${roboto.className} text-[10px] font-normal leading-[150%]`}>
+              <p
+                className={`text-white ${roboto.className} text-[10px] font-normal leading-[150%]`}
+              >
                 Enter your name
               </p>
-              <p className={`text-white ${roboto.className} text-wrap text-[12px] font-bold leading-[150%]`}>
+              <p
+                className={`text-white ${roboto.className} text-wrap text-[12px] font-bold leading-[150%]`}
+              >
                 {fullName}
               </p>
             </div>
             <div className="border-l border-[#24A0B5] p-2">
-              <p className={`text-white ${roboto.className} text-[10px] font-normal leading-[150%]`}>
+              <p
+                className={`text-white ${roboto.className} text-[10px] font-normal leading-[150%]`}
+              >
                 Enter your email *
               </p>
-              <p className={`text-white ${roboto.className} break-words text-[12px] font-bold leading-[150%]`}>
+              <p
+                className={`text-white ${roboto.className} break-words text-[12px] font-bold leading-[150%]`}
+              >
                 {email}
               </p>
             </div>
@@ -82,29 +94,41 @@ const Ticket: React.FC<TicketProps> = ({
 
           <div className="grid grid-cols-2 border-b border-[#24A0B5]">
             <div className="p-2">
-              <p className={`text-white ${roboto.className} text-[10px] font-normal leading-[150%]`}>
+              <p
+                className={`text-white ${roboto.className} text-[10px] font-normal leading-[150%]`}
+              >
                 Ticket Type:
               </p>
-              <p className={`text-white ${roboto.className} text-[12px] font-bold leading-[150%]`}>
+              <p
+                className={`text-white ${roboto.className} text-[12px] font-bold leading-[150%]`}
+              >
                 {ticketType}
               </p>
             </div>
             <div className="border-l border-[#24A0B5] p-2">
-              <p className={`text-white ${roboto.className} text-[10px] font-normal leading-[150%]`}>
+              <p
+                className={`text-white ${roboto.className} text-[10px] font-normal leading-[150%]`}
+              >
                 Ticket for :
               </p>
 
-              <p className={`text-white ${roboto.className} text-[12px] font-bold leading-[150%]`}>
+              <p
+                className={`text-white ${roboto.className} text-[12px] font-bold leading-[150%]`}
+              >
                 {quantity}
               </p>
             </div>
           </div>
 
           <div className="pt-2">
-            <p className={`text-white ${roboto.className} text-[10px] font-normal leading-[150%]`}>
+            <p
+              className={`text-white ${roboto.className} text-[10px] font-normal leading-[150%]`}
+            >
               Special request?
             </p>
-            <p className={`text-white ${roboto.className} text-[10px] font-normal leading-[150%]`}>
+            <p
+              className={`text-white ${roboto.className} text-[10px] font-normal leading-[150%]`}
+            >
               {request || "Nil"}
             </p>
           </div>
