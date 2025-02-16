@@ -59,9 +59,9 @@ const Ticket: React.FC<TicketProps> = ({
           <Image
             src={avatarUrl}
             alt="Avatar"
-            width={100}
-            height={100}
-            className="h-full w-full"
+            width={140}
+            height={140}
+            className="h-full w-full object-cover center"
           />
         </div>
         <div className="rounded-md border border-[#133D44] bg-[#08343C] flex flex-col p-1">
