@@ -59,12 +59,11 @@ const StepOne = () => {
           </label>
           <select
             id="quantity"
-            className="bg-[#07373F] text-white p-2 rounded-md border border-[#24A0B5]"
             value={quantity}
             onChange={handleQuantityChange}
             aria-label="Select number of tickets"
           >
-            {[...Array(10).keys()].map((num) => (
+            {[...Array(5).keys()].map((num) => (
               <option key={num + 1} value={num + 1}>
                 {num + 1}
               </option>
