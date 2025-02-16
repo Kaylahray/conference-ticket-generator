@@ -55,7 +55,7 @@ const Ticket: React.FC<TicketProps> = ({
             📅 March 15, 2025 | 7:00 PM
           </p>
         </div>
-        <div className="w-[140px] h-[140px] rounded-[12px] border-[4px] border-[#24A0B580] bg-gray-300 ">
+        <div className="w-[140px] h-[140px] overflow-hidden rounded-[12px] border-[4px] border-[#24A0B580] bg-gray-300 ">
           <Image
             src={avatarUrl}
             alt="Avatar"
