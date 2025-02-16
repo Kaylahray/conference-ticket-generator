@@ -2,7 +2,7 @@
 import { useCallback, useState } from "react";
 import { useDropzone } from "react-dropzone";
 import Image from "next/image";
-import { Trash2, Upload } from "lucide-react";
+import { Upload } from "lucide-react";
 import { roboto } from "@/app/font";
 
 interface ImageUploadProps {
@@ -68,11 +68,6 @@ const ImageUpload = ({
     maxFiles: 1,
     multiple: false,
   });
-
-  const handleRemove = useCallback(() => {
-    onChange("");
-    onSetPreview("");
-  }, [onChange, onSetPreview]);
 
   return (
     <div className="space-y-4 w-full">
