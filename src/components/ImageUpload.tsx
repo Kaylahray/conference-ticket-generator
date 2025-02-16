@@ -109,7 +109,7 @@ const ImageUpload = ({
                       <p
                         className={`text-[16px] text-[#FAFAFA] text-center ${roboto.className} font-normal leading-[150%]`}
                       >
-                        Drag & drop or click to upload
+                        Drag & drop or click to <br /> upload
                       </p>
                     </div>
                   </>
@@ -132,18 +132,19 @@ const ImageUpload = ({
                   className="object-cover w-full h-full"
                 />
                 <div className="absolute inset-0 bg-black/50 opacity-0 hover:opacity-100 transition flex flex-col items-center justify-center text-white">
-                  <p
-                    className={`text-[16px] text-[#FAFAFA] text-center ${roboto.className} font-normal leading-[150%]`}
-                  >
-                    Drag & drop or click to upload
-                  </p>
-                  <button
-                    onClick={handleRemove}
-                    className="mt-2 p-2 bg-red-500 rounded-full text-white hover:bg-red-600 transition"
-                    type="button"
-                  >
-                    <Trash2 className="h-6 w-6" />
-                  </button>
+                  <div className="flex flex-col gap-4 items-center">
+                    <Image
+                      src="/upload.svg"
+                      alt="ticket"
+                      width={32}
+                      height={32}
+                    />
+                    <p
+                      className={`text-[16px] text-[#FAFAFA] text-center ${roboto.className} font-normal leading-[150%]`}
+                    >
+                      Drag & drop or click to <br /> upload
+                    </p>
+                  </div>
                 </div>
               </div>
             )}
