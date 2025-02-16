@@ -82,7 +82,7 @@ const StepTwo = () => {
               aria-invalid={errors.email ? "true" : "false"}
               aria-describedby={errors.email ? "email-error" : undefined}
               aria-required="true"
-              className="w-full border p-2 pl-10 rounded-md"
+              className="w-full border pl-10 rounded-md"
               placeholder="hello@chioma.io"
             />
           </div>
