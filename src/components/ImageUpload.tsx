@@ -82,7 +82,7 @@ const ImageUpload = ({
           <div
             {...getRootProps()}
             className={`
-              flex lg:w-[240px] h-[240px] w-full  p-6 flex-col justify-center items-center gap-4 rounded-[32px] border-4 border-[#24A0B5]/50 bg-[#0E464F]
+              flex lg:w-[240px] h-[240px] w-full  flex-col justify-center items-center gap-4 overflow-hidden rounded-[32px] border-4 border-[#24A0B5]/50 bg-[#0E464F]
               ${isDragActive ? " border-[#24A0B5]/50" : "bg-[#0E464F]"}
               ${
                 isLoading
@@ -123,20 +123,28 @@ const ImageUpload = ({
               </div>
             )}
             {value && (
-              <div className="relative w-40 h-40">
+              <div className="relative w-60 h-60 bg-red-500 ">
                 <Image
-                  fill
+                  width={160}
+                  height={160}
                   alt="preview"
                   src={value}
-                  className="object-cover"
+                  className="object-cover w-full h-full"
                 />
-                <button
-                  onClick={handleRemove}
-                  className="absolute top-0 right-0 p-1 bg-red-500 rounded-full text-white hover:bg-red-600 transition"
-                  type="button"
-                >
-                  <Trash2 className="h-4 w-4" />
-                </button>
+                <div className="absolute inset-0 bg-black/50 opacity-0 hover:opacity-100 transition flex flex-col items-center justify-center text-white">
+                  <p
+                    className={`text-[16px] text-[#FAFAFA] text-center ${roboto.className} font-normal leading-[150%]`}
+                  >
+                    Drag & drop or click to upload
+                  </p>
+                  <button
+                    onClick={handleRemove}
+                    className="mt-2 p-2 bg-red-500 rounded-full text-white hover:bg-red-600 transition"
+                    type="button"
+                  >
+                    <Trash2 className="h-6 w-6" />
+                  </button>
+                </div>
               </div>
             )}
           </div>
