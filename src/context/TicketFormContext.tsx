@@ -93,9 +93,9 @@ export function TicketFormProvider({
 
   // Initialize ticket options directly in the context
   const ticketOptions: TicketOption[] = [
-    { type: "REGULAR ACCESS", price: 0, available: 20, total: 52 },
-    { type: "VIP ACCESS", price: 150, available: 20, total: 52 },
-    { type: "VVIP ACCESS", price: 150, available: 20, total: 52 },
+    { type: "REGULAR", price: 0, available: 20, total: 52 },
+    { type: "VIP", price: 150, available: 20, total: 52 },
+    { type: "VVIP", price: 150, available: 20, total: 52 },
   ];
   const handleQuantityChange = (
     event: React.ChangeEvent<HTMLSelectElement>

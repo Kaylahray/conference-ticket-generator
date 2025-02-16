@@ -15,6 +15,7 @@ const StepTwo = () => {
     back,
     register,
     handleImageUpload,
+    selectedTicketType,
   } = useTicketFormContext();
 
   return (
@@ -124,7 +125,11 @@ const StepTwo = () => {
             disabled={isSubmitting}
             aria-busy={isSubmitting}
           >
-            Get My Free Ticket
+            {selectedTicketType === "VIP"
+              ? "Get My VIP Ticket"
+              : selectedTicketType === "VVIP"
+              ? "Get My VVIP Ticket"
+              : "Get My Free Ticket"}
           </Button>
           <Button type="button" variant="secondary" onClick={back} fullWidth>
             Back
