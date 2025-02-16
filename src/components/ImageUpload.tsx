@@ -120,8 +120,8 @@ const ImageUpload = ({
             {value && (
               <div className="relative w-60 h-60 ">
                 <Image
-                  width={160}
-                  height={160}
+                  width={240}
+                  height={240}
                   alt="preview"
                   src={value}
                   className="object-cover w-full h-full"
