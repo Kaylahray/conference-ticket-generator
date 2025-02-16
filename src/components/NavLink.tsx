@@ -6,7 +6,6 @@ import { usePathname } from "next/navigation";
 const NavLinks = () => {
   const pathname = usePathname();
 
- 
   const links = [
     { href: "/", label: "Events" },
     { href: "/tickets", label: "My Tickets" },
@@ -14,13 +13,13 @@ const NavLinks = () => {
   ];
 
   return (
-    <nav className="flex gap-4">
+    <nav className="flex gap-2.5 items-center">
       {links.map((link) => (
         <Link
           key={link.href}
           href={link.href}
-          className={`transition-colors hover:text-white p-2.5 ${
-            pathname === link.href ? "text-white" : "text-gray-400"
+          className={`transition-colors hover:text-white p-2.5 leading-none  text-[18px] font-normal  ${
+            pathname === link.href ? "text-white" : "text-[#B3B3B3]"
           }`}
         >
           {link.label}

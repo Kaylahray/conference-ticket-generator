@@ -1,6 +1,6 @@
 import "./globals.css";
 import Image from "next/image";
-import NavLinks from "@/components/Navbar";
+import NavLinks from "@/components/NavLink";
 import { TicketFormProvider } from "@/context/TicketFormContext";
 import localFont from "next/font/local";
 
@@ -42,7 +42,7 @@ export default function RootLayout({
               <div className="hidden lg:block">
                 <NavLinks />
               </div>
-              <div className="flex items-center justify-center gap-2 rounded-[12px] border border-[rgba(213,234,0,0.10)] bg-white  px-4 py-3 lg:px-6 lg:py-4">
+              <div className="flex items-center h-[52px] justify-center gap-2 rounded-[12px] border border-[rgba(213,234,0,0.10)] bg-white  pr-2 pl-4 py-3 lg:pr-2.5 lg:pl-6 lg:py-4">
                 <span className="text-[#0A0C11] text-[14px] lg:text-base font-normal leading-[20px]">
                   My Tickets
                 </span>
