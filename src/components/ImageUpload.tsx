@@ -123,7 +123,7 @@ const ImageUpload = ({
               </div>
             )}
             {value && (
-              <div className="relative w-60 h-60 bg-red-500 ">
+              <div className="relative w-60 h-60 ">
                 <Image
                   width={160}
                   height={160}

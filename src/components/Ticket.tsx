@@ -61,7 +61,7 @@ const Ticket: React.FC<TicketProps> = ({
             alt="Avatar"
             width={140}
             height={140}
-            className="h-full w-full object-cover center"
+            className="h-full w-full object-cover"
           />
         </div>
         <div className="rounded-md border border-[#133D44] bg-[#08343C] flex flex-col p-1">
