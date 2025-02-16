@@ -1,6 +1,6 @@
 "use client";
 import { createContext, useContext, useEffect, useState } from "react";
-import { useForm, UseFormSetValue } from "react-hook-form";
+import { useForm, UseFormSetValue, UseFormClearErrors } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { schema } from "@/lib/schema";
 
@@ -34,6 +34,7 @@ interface TicketFormContextType {
   isSubmitting: boolean;
   isValid: boolean;
   setValue: UseFormSetValue<FormData>;
+  clearErrors: UseFormClearErrors<FormData>;
   reset: () => void;
   imagePreview: string;
   setImagePreview: (url: string) => void;
@@ -74,6 +75,7 @@ export function TicketFormProvider({
     handleSubmit,
     formState: { errors, isSubmitting, isValid },
     setValue,
+    clearErrors, // Added clearErrors
     reset,
   } = useForm<FormData>({
     resolver: zodResolver(schema),
@@ -148,6 +150,8 @@ export function TicketFormProvider({
 
   const submitForm = async (data: FormData) => {
     try {
+      await new Promise((resolve) => setTimeout(resolve, 2000)); // Delay for 2 seconds
+
       const finalData = {
         ...data,
         ticketType: selectedTicketType ?? "",
@@ -180,6 +184,11 @@ export function TicketFormProvider({
     setValue("avatarUrl", url);
     setImagePreview(url);
 
+    // Clear the error when a valid image is uploaded
+    if (url) {
+      clearErrors("avatarUrl");
+    }
+
     const storedData = localStorage.getItem("ticketData");
     const existingData = storedData ? JSON.parse(storedData) : {};
 
@@ -207,6 +216,7 @@ export function TicketFormProvider({
         isSubmitting,
         isValid,
         setValue,
+        clearErrors, // Added clearErrors
         reset,
         imagePreview,
         setImagePreview,

@@ -8,13 +8,13 @@ const StepTwo = () => {
   const {
     handleSubmit,
     submitForm,
-    setValue,
     setImagePreview,
     imagePreview,
     errors,
     isSubmitting,
     back,
     register,
+    handleImageUpload,
   } = useTicketFormContext();
 
   return (
@@ -31,7 +31,9 @@ const StepTwo = () => {
           </span>
           <ImageUpload
             value={imagePreview}
-            onChange={(url) => setValue("avatarUrl", url)}
+            onChange={(url) => {
+              handleImageUpload(url);
+            }}
             onSetPreview={setImagePreview}
             error={errors.avatarUrl?.message as string}
           />
@@ -39,6 +41,7 @@ const StepTwo = () => {
 
         <div className="bg-[#07373F] w-full h-1" role="separator" />
 
+        {/* Rest of your form remains unchanged */}
         <div>
           <label htmlFor="fullName" className="block mb-2">
             Enter your name
@@ -121,7 +124,7 @@ const StepTwo = () => {
             disabled={isSubmitting}
             aria-busy={isSubmitting}
           >
-            {isSubmitting ? "Processing..." : "Get My Free Ticket"}
+            Get My Free Ticket
           </Button>
           <Button type="button" variant="secondary" onClick={back} fullWidth>
             Back
@@ -131,4 +134,5 @@ const StepTwo = () => {
     </div>
   );
 };
+
 export default StepTwo;
